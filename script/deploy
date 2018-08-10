@@ -1,0 +1,8 @@
+#!/bin/sh
+ssh ec2-user@18.222.248.168 <<EOF
+ cd ~/node-app
+ git pull
+ npm install — production
+ pm2 restart all
+ exit
+EOF
