@@ -1,7 +1,7 @@
 #!/bin/sh
 
 echo 'Deploying'
-ssh ec2-user@18.222.248.168 <<EOF
+ssh -i nodeapp/keyfile/tomcat-demo.pem ec2-user@18.222.248.168 <<EOF
  echo 'creating dir'
  cd ~/node-app
  echo 'pulling git'
