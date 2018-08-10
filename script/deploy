@@ -1,7 +1,7 @@
 #!/bin/sh
 
 echo 'Deploying'
-ssh ec2-user@18.222.248.168 -i tomcat-demo.pem << EOF
+ssh ec2-user@18.222.248.168 -i /var/lib/jenkins/workspace/movie/tomcat-demo.pem << EOF
  echo 'creating dir'
  cd ~/node-app
  echo 'pulling git'
