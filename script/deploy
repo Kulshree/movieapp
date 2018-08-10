@@ -1,8 +1,15 @@
 #!/bin/sh
+
+echo 'Deploying'
 ssh ec2-user@18.222.248.168 <<EOF
+ echo 'creating dir'
  cd ~/node-app
+ echo 'pulling git'
  git pull
+ echo 'npm installation'
  npm install — production
+ echo 'starting pm'
  pm2 restart all
+ echo 'exiting'
  exit
 EOF
