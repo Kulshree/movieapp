@@ -1,12 +1,11 @@
 #!/bin/sh
 
 echo 'Deploying'
-<< EOF
- echo 'npm installation'
- npm install
- echo 'starting pm'
- cd /var/lib/jenkins/workspace/movie
- npm start
- echo 'exiting'
- exit
+echo 'npm installation'
+npm install
+echo 'starting pm'
+cd /var/lib/jenkins/workspace/movie
+npm start
+echo 'exiting'
+exit
 EOF
