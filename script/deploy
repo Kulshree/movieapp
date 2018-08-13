@@ -5,7 +5,6 @@ echo 'npm installation'
 npm install
 echo 'starting pm'
 cd /var/lib/jenkins/workspace/movie
-npm start
+pm2 start app.js
 echo 'exiting'
-exit
 EOF
