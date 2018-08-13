@@ -1,15 +1,15 @@
 #!/bin/sh
 
 echo 'Deploying'
-# ssh ec2-user@18.222.248.168 -i /var/lib/jenkins/workspace/movie/tomcat-demo.pem << EOF
+ssh ec2-user@18.222.248.168 -i /var/lib/jenkins/workspace/movie/tomcat-demo.pem << EOF
  echo 'creating dir'
  cd ~/node-app
  echo 'pulling git'
  git pull
  echo 'npm installation'
- npm install — production
+ npm install
  echo 'starting pm'
  pm2 restart all
  echo 'exiting'
  exit
-# EOF
+EOF
