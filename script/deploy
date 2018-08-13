@@ -7,7 +7,7 @@ cd ~/node-app
 echo 'pulling git'
 git pull
 echo 'npm installation'
-npm install — production
+npm install
 echo 'starting pm'
 pm2 restart all
 echo 'exiting'
