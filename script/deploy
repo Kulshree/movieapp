@@ -7,7 +7,7 @@ echo "Copy"
 mkdir -p /home/ec2-user/movieapp
 cp -r movie.zip /home/ec2-user/movieapp
 scp -i /home/ec2-user/tomcat-demo.pem movie.zip ec2-user@18.222.254.202:
-ssh -t /home/ec2-user/tomcat-demo.pem ec2-user@18.222.254.202 << EOF
+ssh -t -t ec2-user@18.222.254.202 << EOF
     mkdir -p movieapp
     unzip -o movie.zip -d movieapp
     rm -f movie.zip
