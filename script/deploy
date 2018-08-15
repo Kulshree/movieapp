@@ -6,6 +6,7 @@ zip -r movie.zip ../movie
 echo "Copy"
 mkdir -p /home/ec2-user/movieapp
 cp -r movie.zip /home/ec2-user/movieapp
+scp -i /home/ec2-user/tomcat-demo.pem movie.zip ec2-user@18.222.254.202:
 rm -f movie.zip
 unzip -o /home/ec2-user/movieapp/movie.zip -d /home/ec2-user/movieapp
 rm -f /home/ec2-user/movieapp/movie.zip
