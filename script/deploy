@@ -13,4 +13,4 @@ rm -f /home/ec2-user/movieapp/movie.zip
 # npm install
 # echo 'starting pm'
 # /home/ec2-user/.nvm/versions/node/v6.11.2/lib/node_modules/pm2/bin/pm2 start /var/lib/jenkins/workspace/movie/app.js
-echo 'exiting'
+#echo 'exiting'
