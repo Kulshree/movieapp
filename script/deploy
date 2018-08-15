@@ -6,6 +6,7 @@ zip -r movie.zip var/lib/jenkins/workspace/movie
 echo "Copy"
 mkdir -p /home/ec2-user/movieapp
 cp -r movie.zip /home/ec2-user/movieapp
+rm -f movie.zip
 mkdir -p /home/ec2-user/movieapp/movieapp
 unzip /home/ec2-user/movieapp/movie.zip -d /home/ec2-user/movieapp/movieapp
 # echo 'npm installation'
