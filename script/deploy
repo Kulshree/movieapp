@@ -8,6 +8,7 @@ mkdir -p /home/ec2-user/movieapp
 cp -r movie.zip /home/ec2-user/movieapp
 rm -f movie.zip
 scp -i /home/ec2-user/productionServer.pem movie.zip ec2-user@18.222.158.28:
+rm -f /home/ec2-user/movieapp/movie.zip
 ssh -i /home/ec2-user/productionServer.pem -T ec2-user@18.222.158.28 << EOF
     curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.32.0/install.sh | bash
     . ~/.nvm/nvm.sh
