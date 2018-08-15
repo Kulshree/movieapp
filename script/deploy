@@ -2,7 +2,7 @@
 
 echo 'Deploying'
 echo 'Packaging'
-zip -r movie.zip /movie
+zip -r movie.zip ../movie
 echo "Copy"
 mkdir -p /home/ec2-user/movieapp
 cp -r movie.zip /home/ec2-user/movieapp
