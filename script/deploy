@@ -6,8 +6,13 @@ zip -r movie.zip ../movie
 echo "Copy"
 mkdir -p /home/ec2-user/movieapp
 cp -r movie.zip /home/ec2-user/movieapp
-scp -i /home/ec2-user/tomcat-demo.pem movie.zip ec2-user@18.222.254.202:
-ssh -i /home/ec2-user/tomcat-demo.pem -T ec2-user@18.222.254.202 << EOF
+scp -i /home/ec2-user/productionServer.pem movie.zip ec2-user@18.222.158.28:
+ssh -i /home/ec2-user/productionServer.pem -T ec2-user@18.222.158.28 << EOF
+    curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.32.0/install.sh | bash
+    . ~/.nvm/nvm.sh
+    nvm install 6.11.2
+    node -e "console.log('Running Node.js ' + process.version)"
+    npm i -g pm2
     mkdir -p movieapp
     unzip -o movie.zip -d movieapp
     rm -f movie.zip
