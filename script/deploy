@@ -2,13 +2,14 @@
 
 echo 'Deploying'
 echo 'Packaging'
-zip -r movie.zip var/lib/jenkins/workspace/movie
+zip -r movie.zip /var/lib/jenkins/workspace/movie
 echo "Copy"
 mkdir -p /home/ec2-user/movieapp
 cp -r movie.zip /home/ec2-user/movieapp
 rm -f movie.zip
 mkdir -p /home/ec2-user/movieapp/movieapp
 unzip /home/ec2-user/movieapp/movie.zip -d /home/ec2-user/movieapp/movieapp
+rm -f /home/ec2-user/movieapp/movie.zip
 # echo 'npm installation'
 # npm install
 # echo 'starting pm'
