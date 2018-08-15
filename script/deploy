@@ -7,12 +7,14 @@ echo "Copy"
 mkdir -p /home/ec2-user/movieapp
 cp -r movie.zip /home/ec2-user/movieapp
 scp -i /home/ec2-user/tomcat-demo.pem movie.zip ec2-user@18.222.254.202:
-rm -f movie.zip
-unzip -o /home/ec2-user/movieapp/movie.zip -d /home/ec2-user/movieapp
-rm -f /home/ec2-user/movieapp/movie.zip
-cd /home/ec2-user/movieapp/movie
-echo 'npm installation'
-npm install
-echo 'starting pm'
-/home/ec2-user/.nvm/versions/node/v6.11.2/lib/node_modules/pm2/bin/pm2 start app.js
-echo 'exiting'
+ssh -i /home/ec2-user/tomcat-demo.pem ec2-user@18.222.254.202: << EOF
+    mkdir -p movieapp
+    unzip -o movie.zip -d movieapp
+    rm -f movie.zip
+    # cd /home/ec2-user/movieapp/movie
+    # echo 'npm installation'
+    # npm install
+    # echo 'starting pm'
+    # /home/ec2-user/.nvm/versions/node/v6.11.2/lib/node_modules/pm2/bin/pm2 start app.js
+    echo 'exiting'
+EOF
